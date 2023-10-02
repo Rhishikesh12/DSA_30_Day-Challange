@@ -1,4 +1,5 @@
 // How to Store a graph in adjacency list [Directed and Undirected]
+// Zero Based Indexing Code
 
 import java.util.*;
 
@@ -10,11 +11,11 @@ public class storing_graph {
         int nodes = sc.nextInt();
 
         // Using List<List<Integer>> for the adjacency list
-        // * We can use ArrayList<Integer>[] for strict and specific type constraint,
         // Time complexity: O(2E)
+        // * We can use ArrayList<Integer>[] for strict and specific type constraint,
+
         List<List<Integer>> adjList = new ArrayList<>();
         for (int i = 0; i < nodes; i++) {
-
             // ! Why are we adding new ArrayList here?
             // * For each iteration, it adds a new ArrayList<Integer> to the adj list. This
             // * newly created ArrayList represents the adjacency list for a vertex.
@@ -30,7 +31,7 @@ public class storing_graph {
             int v2 = sc.nextInt();
 
             adjList.get(v1).add(v2);
-            adjList.get(v2).add(v1);
+            adjList.get(v2).add(v1); // remove this for directed graph
         }
 
         sc.close();
