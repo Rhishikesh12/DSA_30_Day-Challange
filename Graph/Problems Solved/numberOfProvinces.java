@@ -1,3 +1,5 @@
+/// using adjacency matrix
+
 import java.util.Scanner;
 
 public class numberOfProvinces {
