@@ -28,7 +28,7 @@ public class numberOfProvinces {
 
     static void dfs(int node, int[][] roads, int[] vis, int n) {
         vis[node] = 1;
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < roads.length; i++) {
             if (roads[node][i] == 1 && vis[i] == 0) {
                 dfs(i, roads, vis, n);
             }
@@ -48,3 +48,5 @@ public class numberOfProvinces {
         return count;
     }
 }
+
+/// usign adjacency list
