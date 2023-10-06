@@ -2,9 +2,17 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import Classes.Node;
-
 public class cyclicGraph {
+
+    static public class nodeClass {
+        public int first;
+        public int second;
+
+        public nodeClass(int first, int second) {
+            this.first = first;
+            this.second = second;
+        }
+    }
 
     public static void main(String[] args) {
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
@@ -40,8 +48,8 @@ public class cyclicGraph {
 
     public static boolean detectCycle(int src, ArrayList<ArrayList<Integer>> adj, boolean[] vis) {
         vis[src] = true;
-        Queue<Node> q = new LinkedList<>();
-        q.add(new Node(src, -1));
+        Queue<nodeClass> q = new LinkedList<>();
+        q.add(new nodeClass(src, -1));
         while (!q.isEmpty()) {
             int node = q.peek().first;
             int parent = q.peek().second;
@@ -50,7 +58,7 @@ public class cyclicGraph {
             for (int i : adj.get(node)) {
                 if (!vis[i]) {
                     vis[i] = true;
-                    q.add(new Node(i, node));
+                    q.add(new nodeClass(i, node));
                 } else if (parent != i) {
                     return true;
                 }
