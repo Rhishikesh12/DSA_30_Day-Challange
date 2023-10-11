@@ -1,4 +1,5 @@
-package Graph;
+package Day2;
+
 import java.util.*;
 
 class bfs {

@@ -1,7 +1,7 @@
-package Graph;
 // How to Store a graph in adjacency list [Directed and Undirected]
 
 // Zero Based Indexing Code
+package Day3;
 
 import java.util.*;
 
